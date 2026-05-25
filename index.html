@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Hair & Beauty by Kim — Makeup Artist | San Diego & Bay Area</title>
+<meta name="description" content="Hair & Beauty by Kim — Professional makeup artist and beauty educator serving San Diego and the Bay Area. Bridal, editorial, glam and color. 25+ years of experience." />
+<meta name="theme-color" content="#0b0b0b" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0b0b0b;
+    --ink:#111;
+    --char:#1a1a1a;
+    --white:#ffffff;
+    --paper:#f7f3ee;
+    --cream:#efe8df;
+    --line:#222;
+    --line-soft:rgba(255,255,255,.14);
+    --muted:#a8a39b;
+    --gold:#c9a96a;
+    --gold-bright:#e6c887;
+    --gold-deep:#9c7e44;
+    --serif:'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--white);
+    background:var(--black);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  /* ============== TYPOGRAPHY HELPERS ============== */
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:.72rem;
+    font-weight:500;
+    color:var(--gold);
+  }
+  .display{
+    font-family:var(--serif);
+    font-weight:400;
+    line-height:.98;
+    letter-spacing:-.01em;
+  }
+  .h-xl{font-size:clamp(2.6rem, 7vw, 5.6rem)}
+  .h-lg{font-size:clamp(2rem, 4.6vw, 3.6rem)}
+  .h-md{font-size:clamp(1.5rem, 2.6vw, 2.2rem)}
+  .lead{
+    font-family:var(--serif);
+    font-size:clamp(1.15rem, 1.6vw, 1.45rem);
+    font-style:italic;
+    color:#e9e4dc;
+    font-weight:400;
+  }
+  .gold-line{
+    display:inline-block;width:48px;height:1px;background:var(--gold);
+    margin:0 .8rem;vertical-align:middle;
+  }
+
+  /* ============== NAV ============== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    padding:18px 56px;
+    display:flex;align-items:center;justify-content:space-between;
+    transition:background .4s var(--ease), padding .4s var(--ease), border-color .4s var(--ease);
+    border-bottom:1px solid transparent;
+    backdrop-filter:blur(0);
+  }
+  .nav.scrolled{
+    background:rgba(11,11,11,.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+    padding:12px 56px;
+  }
+  .brand{
+    display:flex;flex-direction:column;align-items:flex-start;line-height:1;
+  }
+  .brand .mark{
+    font-family:var(--serif);font-size:1.5rem;font-weight:500;letter-spacing:.02em;
+  }
+  .brand .mark em{color:var(--gold);font-style:normal;font-weight:400}
+  .brand .sub{
+    font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);
+    margin-top:4px;
+  }
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:#dcd6cd;position:relative;padding:6px 0;transition:color .25s;
+  }
+  .nav-links a:hover{color:var(--gold-bright)}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:0;height:1px;width:0;
+    background:var(--gold);transition:width .35s var(--ease);
+  }
+  .nav-links a:hover::after{width:100%}
+
+  .lang-toggle{
+    display:flex;border:1px solid var(--gold-deep);border-radius:999px;
+    padding:3px;overflow:hidden;
+  }
+  .lang-toggle button{
+    font-size:.7rem;letter-spacing:.2em;font-weight:600;
+    padding:6px 12px;border-radius:999px;color:#dcd6cd;transition:all .25s;
+  }
+  .lang-toggle button.active{
+    background:var(--gold);color:var(--black);
+  }
+  .mobile-toggle{display:none;width:32px;height:32px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+  .mobile-toggle span{width:22px;height:1px;background:var(--white);transition:.3s}
+  .mobile-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .mobile-toggle.open span:nth-child(2){opacity:0}
+  .mobile-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  /* ============== HERO ============== */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:flex-end;
+    padding:120px 56px 80px;overflow:hidden;isolation:isolate;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:url('images/hero/hero.jpg') right center/cover no-repeat;
+    z-index:-2;transform:scale(1.06);animation:slowZoom 18s ease-out forwards;
+    filter:contrast(1.04) saturate(.95);
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg, rgba(11,11,11,.35) 0%, rgba(11,11,11,.15) 30%, rgba(11,11,11,.95) 100%),
+      linear-gradient(90deg, rgba(11,11,11,.86) 0%, rgba(11,11,11,.55) 38%, rgba(11,11,11,.15) 65%, rgba(11,11,11,0) 100%);
+  }
+  @keyframes slowZoom{from{transform:scale(1.18)}to{transform:scale(1.02)}}
+
+  .hero-inner{max-width:880px;width:100%}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{margin-bottom:28px}
+  .hero h1 em{
+    font-style:italic;font-family:var(--serif);color:var(--gold-bright);font-weight:300;
+  }
+  .hero .lead{max-width:540px;margin-bottom:36px}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:32px;align-items:center;
+    padding-top:30px;border-top:1px solid var(--line-soft);
+    max-width:680px;
+  }
+  .hero-meta .item{display:flex;flex-direction:column}
+  .hero-meta .item .v{font-family:var(--serif);font-size:1.7rem;color:var(--gold-bright);line-height:1}
+  .hero-meta .item .l{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+  .hero-cta{display:flex;gap:18px;margin-top:36px;flex-wrap:wrap}
+
+  /* ============== BUTTONS ============== */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;
+    padding:16px 28px;border:1px solid var(--gold);color:var(--gold-bright);
+    transition:all .35s var(--ease);position:relative;overflow:hidden;
+  }
+  .btn::before{
+    content:'';position:absolute;inset:0;background:var(--gold);
+    transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);z-index:-1;
+  }
+  .btn:hover{color:var(--black)}
+  .btn:hover::before{transform:scaleX(1)}
+  .btn.solid{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  .btn.solid:hover{background:transparent;color:var(--gold-bright)}
+  .btn .arrow{transition:transform .3s}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ============== SECTIONS ============== */
+  section{padding:120px 56px;position:relative}
+  .section-head{max-width:760px;margin:0 auto 70px;text-align:center}
+  .section-head .eyebrow{display:block;margin-bottom:18px}
+  .section-head h2{margin-bottom:20px}
+  .section-head p{color:#cfc8bd;font-size:1.05rem;max-width:580px;margin:0 auto}
+
+  /* ============== ABOUT ============== */
+  .about{background:var(--black)}
+  .about-grid{
+    max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;
+  }
+  .about-image{position:relative;aspect-ratio:4/5}
+  .about-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.04)}
+  .about-image::before{
+    content:'';position:absolute;inset:-18px -18px 18px 18px;
+    border:1px solid var(--gold-deep);z-index:-1;
+  }
+  .about-image .stamp{
+    position:absolute;bottom:-30px;right:-30px;
+    width:140px;height:140px;border-radius:50%;
+    background:var(--gold);color:var(--black);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:600;line-height:1;text-align:center;
+  }
+  .about-image .stamp .n{font-size:2.6rem}
+  .about-image .stamp .t{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;margin-top:6px;font-family:var(--sans);font-weight:500}
+  .about-content h2{margin-bottom:24px}
+  .about-content .lead{margin-bottom:24px}
+  .about-content p{color:#cfc8bd;margin-bottom:18px;font-size:1rem}
+  .about-content p strong{color:var(--white);font-weight:500}
+  .signature{
+    font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--gold-bright);
+    margin-top:34px;
+  }
+  .signature .sig-sub{display:block;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-style:normal;font-family:var(--sans);margin-top:8px;font-weight:500}
+
+  /* ============== SERVICES ============== */
+  .services{background:linear-gradient(180deg, #0b0b0b 0%, #131313 100%)}
+  .services-grid{
+    max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1px;
+    background:var(--line-soft);border:1px solid var(--line-soft);
+  }
+  .service{
+    background:var(--black);padding:50px 38px;transition:background .4s;position:relative;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .service:hover{background:#151515}
+  .service .num{
+    font-family:var(--serif);font-size:.95rem;color:var(--gold);letter-spacing:.18em;
+  }
+  .service h3{font-family:var(--serif);font-size:1.7rem;font-weight:500;letter-spacing:-.005em}
+  .service p{color:#bdb6ab;font-size:.94rem;line-height:1.65}
+  .service .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .service .tags span{
+    font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+    padding:5px 10px;border:1px solid var(--gold-deep);color:var(--gold-bright);
+  }
+
+  /* ============== GALLERY ============== */
+  .gallery{background:#0a0a0a;padding-bottom:140px}
+  .filter{
+    display:flex;justify-content:center;gap:8px;margin-bottom:50px;flex-wrap:wrap;
+  }
+  .filter button{
+    font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;
+    padding:10px 18px;color:#bdb6ab;border:1px solid transparent;border-radius:999px;
+    transition:all .3s;
+  }
+  .filter button:hover{color:var(--gold-bright)}
+  .filter button.active{
+    border-color:var(--gold);color:var(--gold-bright);
+  }
+  .grid{
+    max-width:1380px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .tile{
+    position:relative;overflow:hidden;background:#111;cursor:pointer;
+    aspect-ratio:3/4;
+  }
+  .tile.tall{grid-row:span 2;aspect-ratio:3/8}
+  .tile img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform 1.2s var(--ease), filter .6s;
+  }
+  .tile:hover img{transform:scale(1.06);filter:brightness(1.08)}
+  .tile::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.78) 100%);
+    opacity:0;transition:opacity .35s;
+  }
+  .tile:hover::after{opacity:1}
+  .tile .cap{
+    position:absolute;left:20px;right:20px;bottom:18px;
+    color:#fff;opacity:0;transform:translateY(8px);
+    transition:all .35s var(--ease);z-index:2;
+  }
+  .tile:hover .cap{opacity:1;transform:translateY(0)}
+  .tile .cap .t{font-family:var(--serif);font-size:1.2rem;line-height:1.1}
+  .tile .cap .c{font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-bright);margin-top:4px}
+
+  /* ============== EXPERIENCE / TIMELINE ============== */
+  .credentials{background:var(--black);border-top:1px solid var(--line-soft)}
+  .cred-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+  .timeline{position:relative;padding-left:32px}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--gold-deep);
+  }
+  .t-item{position:relative;margin-bottom:36px}
+  .t-item::before{
+    content:'';position:absolute;left:-32px;top:8px;width:13px;height:13px;
+    border-radius:50%;background:var(--black);border:1px solid var(--gold);
+  }
+  .t-item .year{font-family:var(--serif);font-size:1.3rem;color:var(--gold-bright);font-weight:500}
+  .t-item .title{font-size:.95rem;font-weight:500;margin-top:4px;color:#fff}
+  .t-item .desc{font-size:.88rem;color:#a8a39b;margin-top:4px;line-height:1.55}
+
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .skill{background:var(--black);padding:28px 22px}
+  .skill .icon{
+    width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+    font-family:var(--serif);color:var(--gold-bright);font-size:1.1rem;
+  }
+  .skill h4{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin-bottom:6px}
+  .skill p{font-size:.83rem;color:#a8a39b;line-height:1.5}
+
+  /* ============== TESTIMONIAL ============== */
+  .quote{
+    background:linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+    text-align:center;padding:140px 56px;
+  }
+  .quote::before{
+    content:'\201C';font-family:var(--serif);
+    font-size:8rem;color:var(--gold);line-height:.6;display:block;margin-bottom:10px;
+  }
+  .quote blockquote{
+    max-width:820px;margin:0 auto;
+    font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);
+    line-height:1.35;color:#e9e4dc;font-weight:400;
+  }
+  .quote .by{
+    margin-top:30px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  }
+
+  /* ============== CONTACT ============== */
+  .contact{
+    background:var(--black);
+    border-top:1px solid var(--line-soft);
+  }
+  .contact-grid{
+    max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .contact-info h2{margin-bottom:24px}
+  .contact-info p{color:#cfc8bd;margin-bottom:32px;font-size:1.02rem;max-width:480px}
+  .contact-list{display:flex;flex-direction:column;gap:24px;margin-bottom:36px}
+  .c-item{display:flex;gap:18px;align-items:flex-start}
+  .c-item .ico{
+    flex:0 0 44px;width:44px;height:44px;border:1px solid var(--gold-deep);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:var(--gold-bright);
+  }
+  .c-item .lbl{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .c-item .val{font-family:var(--serif);font-size:1.25rem;color:#fff;transition:color .25s}
+  .c-item a:hover .val{color:var(--gold-bright)}
+
+  .form{
+    background:#0f0f0f;border:1px solid var(--line-soft);padding:48px 42px;
+  }
+  .form h3{font-family:var(--serif);font-size:1.7rem;font-weight:500;margin-bottom:28px}
+  .form-row{margin-bottom:20px}
+  .form label{display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .form input,.form textarea,.form select{
+    width:100%;background:transparent;border:none;border-bottom:1px solid var(--line-soft);
+    color:#fff;padding:12px 0;font-family:var(--sans);font-size:.95rem;outline:none;
+    transition:border-color .25s;
+  }
+  .form input:focus,.form textarea:focus,.form select:focus{border-color:var(--gold)}
+  .form textarea{resize:vertical;min-height:90px}
+  .form .btn{margin-top:14px;width:100%;justify-content:center;background:var(--gold);color:var(--black);border-color:var(--gold)}
+  .form .btn:hover{background:transparent;color:var(--gold-bright)}
+
+  .follow{margin-top:36px;padding-top:30px;border-top:1px solid var(--line-soft)}
+  .follow-label{display:block;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:500}
+  .follow-links{display:flex;gap:14px;flex-wrap:wrap}
+  .follow-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 16px;border:1px solid var(--line-soft);
+    color:#dcd6cd;font-size:.82rem;letter-spacing:.05em;
+    transition:all .3s var(--ease);
+  }
+  .follow-btn:hover{border-color:var(--gold);color:var(--gold-bright);background:rgba(201,169,106,.06)}
+
+  /* ============== FOOTER ============== */
+  footer{
+    background:#050505;padding:60px 56px 36px;border-top:1px solid var(--line-soft);
+  }
+  .foot-grid{
+    max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;
+    padding-bottom:40px;border-bottom:1px solid var(--line-soft);
+  }
+  .foot-brand .mark{font-family:var(--serif);font-size:1.6rem;font-weight:500}
+  .foot-brand .mark em{color:var(--gold);font-style:normal}
+  .foot-brand p{color:#a8a39b;font-size:.9rem;margin-top:14px;max-width:380px;line-height:1.65}
+  .foot h5{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot a{font-size:.9rem;color:#cfc8bd;transition:color .25s}
+  .foot a:hover{color:var(--gold-bright)}
+  .copy{
+    max-width:1240px;margin:30px auto 0;display:flex;justify-content:space-between;align-items:center;
+    font-size:.74rem;color:var(--muted);letter-spacing:.1em;
+  }
+  .socials{display:flex;gap:14px}
+  .socials a{
+    width:36px;height:36px;border:1px solid var(--line-soft);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;transition:all .3s;
+  }
+  .socials a:hover{border-color:var(--gold);color:var(--gold-bright)}
+
+  /* ============== LIGHTBOX ============== */
+  .lb{
+    position:fixed;inset:0;background:rgba(5,5,5,.96);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:60px;
+  }
+  .lb.open{display:flex;animation:fadeIn .3s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .lb img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb-close,.lb-prev,.lb-next{
+    position:absolute;color:#fff;background:rgba(0,0,0,.4);border:1px solid var(--gold-deep);
+    width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;transition:all .3s;
+  }
+  .lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  .lb-close{top:24px;right:24px}
+  .lb-prev{left:24px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:24px;top:50%;transform:translateY(-50%)}
+
+  /* ============== REVEAL ANIMATIONS ============== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width:960px){
+    .nav{padding:14px 22px}
+    .nav.scrolled{padding:10px 22px}
+    .mobile-toggle{display:flex}
+    .nav-links{
+      position:fixed;top:0;right:-100%;width:78%;max-width:340px;height:100vh;
+      background:rgba(11,11,11,.97);backdrop-filter:blur(20px);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      padding:60px 36px;gap:24px;transition:right .4s var(--ease);
+      border-left:1px solid var(--gold-deep);
+    }
+    .nav-links.open{right:0}
+    .nav-links a{font-size:1rem;letter-spacing:.18em}
+    section{padding:90px 22px}
+    .hero{padding:140px 22px 60px}
+    .hero::before{background-position:65% center}
+    .hero::after{
+      background:
+        linear-gradient(180deg, rgba(11,11,11,.35) 0%, rgba(11,11,11,.1) 20%, rgba(11,11,11,.85) 60%, rgba(11,11,11,.98) 100%),
+        linear-gradient(90deg, rgba(11,11,11,.55) 0%, rgba(11,11,11,.3) 50%, rgba(11,11,11,.55) 100%);
+    }
+    .about-grid,.cred-grid,.contact-grid{grid-template-columns:1fr;gap:60px}
+    .about-image{max-width:480px;margin:0 auto}
+    .about-image .stamp{width:110px;height:110px;bottom:-20px;right:-10px}
+    .about-image .stamp .n{font-size:2rem}
+    .grid{grid-template-columns:repeat(2, 1fr);gap:10px}
+    .tile.tall{grid-row:span 1;aspect-ratio:3/4}
+    .quote{padding:90px 22px}
+    .foot-grid{grid-template-columns:1fr;gap:40px}
+    .copy{flex-direction:column;gap:14px;text-align:center}
+    .form{padding:32px 24px}
+    .hero-meta{gap:24px}
+    .hero-meta .item .v{font-size:1.4rem}
+  }
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr}
+    .skills{grid-template-columns:1fr}
+    .nav-links{width:88%}
+  }
+
+  /* ============== LANGUAGE SWITCH ============== */
+  [data-en],[data-es]{display:none}
+  html[lang="en"] [data-en]{display:initial}
+  html[lang="es"] [data-es]{display:initial}
+  html[lang="en"] .block[data-en],
+  html[lang="es"] .block[data-es]{display:block}
+
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="mark">Hair & Beauty <em>by Kim</em></span>
+    <span class="sub">Makeup Artist · Est. 2000</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" data-en>About</a><a href="#about" data-es>Acerca</a>
+    <a href="#services" data-en>Services</a><a href="#services" data-es>Servicios</a>
+    <a href="#work" data-en>Portfolio</a><a href="#work" data-es>Portafolio</a>
+    <a href="#experience" data-en>Experience</a><a href="#experience" data-es>Experiencia</a>
+    <a href="#contact" data-en>Contact</a><a href="#contact" data-es>Contacto</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="active" data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+    </div>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow" data-en>San Diego · Bay Area · Since November 2000</div>
+    <div class="eyebrow" data-es>San Diego · Bay Area · Desde Noviembre 2000</div>
+
+    <h1 class="display h-xl">
+      <span data-en>The art of <em>effortless</em> beauty.</span>
+      <span data-es>El arte de la belleza <em>sin esfuerzo</em>.</span>
+    </h1>
+
+    <p class="lead">
+      <span data-en>Bridal, editorial and glam makeup by Kimberly Hansen — a 25+ year career devoted to precision, color, and the kind of finish that photographs as well as it feels.</span>
+      <span data-es>Maquillaje para novias, editorial y glam por Kimberly Hansen — una carrera de más de 25 años dedicada a la precisión, el color y un acabado que se ve tan bien como se siente.</span>
+    </p>
+
+    <div class="hero-cta">
+      <a href="#work" class="btn">
+        <span data-en>View Portfolio</span><span data-es>Ver Portafolio</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#contact" class="btn solid">
+        <span data-en>Book a Session</span><span data-es>Reservar</span>
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="item">
+        <span class="v">25+</span>
+        <span class="l" data-en>Years Experience</span>
+        <span class="l" data-es>Años de Experiencia</span>
+      </div>
+      <div class="item">
+        <span class="v">1000+</span>
+        <span class="l" data-en>Clients Styled</span>
+        <span class="l" data-es>Clientas Atendidas</span>
+      </div>
+      <div class="item">
+        <span class="v">EN · ES</span>
+        <span class="l" data-en>Fully Bilingual</span>
+        <span class="l" data-es>Totalmente Bilingüe</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== ABOUT ========== -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image reveal">
+      <img src="images/hero/about.jpg" alt="Kim makeup artist portfolio sample" loading="lazy">
+      <div class="stamp">
+        <span class="n">25+</span>
+        <span class="t" data-en>Years</span>
+        <span class="t" data-es>Años</span>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <span class="eyebrow" data-en>The Artist</span>
+      <span class="eyebrow" data-es>La Artista</span>
+      <h2 class="display h-lg" style="margin-top:18px">
+        <span data-en>A quarter century<br>of perfecting the craft.</span>
+        <span data-es>Un cuarto de siglo<br>perfeccionando el arte.</span>
+      </h2>
+
+      <p class="lead" data-en>I have spent my career studying every angle of beauty — from the brush stroke to the boardroom.</p>
+      <p class="lead" data-es>He dedicado mi carrera a estudiar cada ángulo de la belleza — desde la pincelada hasta la sala de juntas.</p>
+
+      <p data-en>Kim began her career in <strong>November 2000</strong> at Irma's Beauty Supply — her family's beauty business in Rosarito, founded in 1982. There she trained under industry veterans, served as both a working beautician and a sales manager, and developed a deep understanding of products, technique, and what real clients want.</p>
+      <p data-es>Kim comenzó su carrera en <strong>Noviembre del 2000</strong> en Irma's Beauty Supply — el negocio familiar de belleza en Rosarito, fundado en 1982. Ahí se formó con veteranos de la industria, trabajó como esteticista y gerente de ventas, y desarrolló un conocimiento profundo de productos, técnica y lo que realmente quieren las clientas.</p>
+
+      <p data-en>Over the years she has refined every modern technique — soft glam, bridal, editorial, color correction, and high-definition camera-ready finishes. She has <strong>taught beauty courses</strong>, <strong>participated in industry expos</strong>, and trained other artists across both sides of the border.</p>
+      <p data-es>Con los años ha refinado cada técnica moderna — soft glam, novias, editorial, corrección de color y acabados listos para cámara HD. Ha <strong>impartido cursos de belleza</strong>, <strong>participado en expos</strong> y formado a otras artistas a ambos lados de la frontera.</p>
+
+      <p data-en>Today she runs <strong>Hair & Beauty by Kim</strong>, a private studio serving San Diego and the Bay Area — bilingual, fully booked, and trusted by brides and clients who want the polish without the fuss.</p>
+      <p data-es>Hoy dirige <strong>Hair & Beauty by Kim</strong>, un estudio privado al servicio de San Diego y la Bay Area — bilingüe, con agenda llena y de confianza para novias y clientas que buscan elegancia sin complicaciones.</p>
+
+      <div class="signature">
+        Kimberly Hansen
+        <span class="sig-sub" data-en>Founder · Makeup Artist</span>
+        <span class="sig-sub" data-es>Fundadora · Maquillista</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services" id="services">
+  <div class="section-head reveal">
+    <span class="eyebrow" data-en>Services</span>
+    <span class="eyebrow" data-es>Servicios</span>
+    <h2 class="display h-lg">
+      <span data-en>Tailored for the moment.</span>
+      <span data-es>Diseñado para el momento.</span>
+    </h2>
+    <p data-en>From a private bridal trial to an on-set editorial — every service is built around your face, your lighting, and the day you're walking into.</p>
+    <p data-es>Desde una prueba privada de novia hasta una sesión editorial — cada servicio se diseña en torno a tu rostro, tu luz y el día que estás viviendo.</p>
+  </div>
+
+  <div class="services-grid reveal">
+    <div class="service">
+      <span class="num">01 / 04</span>
+      <h3 data-en>Bridal & Events</h3>
+      <h3 data-es>Novias & Eventos</h3>
+      <p data-en>Long-wear, photo-ready makeup designed to hold through every ceremony, dance and tear. Includes consultation and trial.</p>
+      <p data-es>Maquillaje de larga duración y listo para fotografía, diseñado para resistir cada ceremonia, baile y lágrima. Incluye consulta y prueba.</p>
+      <div class="tags"><span data-en>Bride</span><span data-es>Novia</span><span data-en>Trial</span><span data-es>Prueba</span><span>HD</span></div>
+    </div>
+
+    <div class="service">
+      <span class="num">02 / 04</span>
+      <h3 data-en>Editorial & Photoshoot</h3>
+      <h3 data-es>Editorial & Sesiones</h3>
+      <p data-en>Concept-driven looks for fashion, beauty campaigns and personal branding shoots — built to work with your photographer's lighting.</p>
+      <p data-es>Looks conceptuales para moda, campañas de belleza y branding personal — construidos para funcionar con la iluminación de tu fotógrafo.</p>
+      <div class="tags"><span>Editorial</span><span data-en>Beauty</span><span data-es>Belleza</span><span data-en>Branding</span><span data-es>Marca</span></div>
+    </div>
+
+    <div class="service">
+      <span class="num">03 / 04</span>
+      <h3 data-en>Soft Glam & Special Occasion</h3>
+      <h3 data-es>Soft Glam & Ocasión Especial</h3>
+      <p data-en>The everyday upgrade — refined, modern, never overdone. Perfect for galas, anniversaries, graduations and milestone moments.</p>
+      <p data-es>El upgrade del día a día — refinado, moderno, nunca exagerado. Perfecto para galas, aniversarios, graduaciones y momentos clave.</p>
+      <div class="tags"><span data-en>Glam</span><span data-es>Glam</span><span data-en>Evening</span><span data-es>Noche</span><span data-en>Gala</span><span data-es>Gala</span></div>
+    </div>
+
+    <div class="service">
+      <span class="num">04 / 04</span>
+      <h3 data-en>Beauty Education & Workshops</h3>
+      <h3 data-es>Educación & Talleres</h3>
+      <p data-en>Private and group classes for aspiring artists and brand teams — color theory, product knowledge, and modern application technique.</p>
+      <p data-es>Clases privadas y grupales para artistas en formación y equipos de marca — teoría del color, conocimiento de producto y técnica moderna de aplicación.</p>
+      <div class="tags"><span data-en>Course</span><span data-es>Curso</span><span data-en>Pro</span><span data-es>Pro</span><span data-en>1-on-1</span><span data-es>1 a 1</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="gallery" id="work">
+  <div class="section-head reveal">
+    <span class="eyebrow" data-en>Selected Work</span>
+    <span class="eyebrow" data-es>Trabajo Seleccionado</span>
+    <h2 class="display h-lg">
+      <span data-en>The portfolio.</span>
+      <span data-es>El portafolio.</span>
+    </h2>
+    <p data-en>A curated edit of recent makeup, bridal and editorial work. Click any image to view full size.</p>
+    <p data-es>Una selección curada de trabajos recientes en maquillaje, novias y editorial. Haz clic en cualquier imagen para verla completa.</p>
+  </div>
+
+  <div class="filter reveal">
+    <button class="active" data-filter="all"><span data-en>All Work</span><span data-es>Todo</span></button>
+    <button data-filter="editorial">Editorial</button>
+    <button data-filter="bridal"><span data-en>Bridal</span><span data-es>Novias</span></button>
+    <button data-filter="glam">Glam</button>
+    <button data-filter="color"><span data-en>Color</span><span data-es>Color</span></button>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="tile tall" data-cat="editorial"><img src="images/gallery/01-editorial-eye.jpg" alt="Editorial gold eye"><div class="cap"><div class="t" data-en>Golden Hour</div><div class="t" data-es>Hora Dorada</div><div class="c">Editorial</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/02-bridal-glow.jpg" alt="Bridal glow"><div class="cap"><div class="t" data-en>Bridal Glow</div><div class="t" data-es>Brillo de Novia</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/03-soft-glam.jpg" alt="Soft glam"><div class="cap"><div class="t" data-en>Soft Glam</div><div class="t" data-es>Soft Glam</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/04-smoky-blonde.jpg" alt="Smoky eye"><div class="cap"><div class="t" data-en>Smoky Sun</div><div class="t" data-es>Ahumado Solar</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="color"><img src="images/gallery/05-vibrant-color.jpg" alt="Vibrant color"><div class="cap"><div class="t" data-en>Bold Plum</div><div class="t" data-es>Ciruela Audaz</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
+    <div class="tile" data-cat="editorial"><img src="images/gallery/06-peach-lip.jpg" alt="Peach lip"><div class="cap"><div class="t" data-en>Peach Cream</div><div class="t" data-es>Durazno</div><div class="c">Beauty</div></div></div>
+    <div class="tile tall" data-cat="glam"><img src="images/gallery/07-warm-glam.jpg" alt="Warm glam"><div class="cap"><div class="t" data-en>Warm Glam</div><div class="t" data-es>Glam Cálido</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="color"><img src="images/gallery/08-teal-statement.jpg" alt="Teal color"><div class="cap"><div class="t" data-en>Teal Statement</div><div class="t" data-es>Turquesa</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/09-brunette-glam.jpg" alt="Brunette glam"><div class="cap"><div class="t" data-en>Studio Glam</div><div class="t" data-es>Glam de Estudio</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/10-evening-look.jpg" alt="Evening look"><div class="cap"><div class="t" data-en>Evening</div><div class="t" data-es>Noche</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/11-bridal-updo.jpg" alt="Bridal updo"><div class="cap"><div class="t" data-en>Bridal Updo</div><div class="t" data-es>Recogido Novia</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/12-updo-back.jpg" alt="Updo back"><div class="cap"><div class="t" data-en>Sculpted Hair</div><div class="t" data-es>Cabello Esculpido</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/13-romantic-curls.jpg" alt="Romantic curls"><div class="cap"><div class="t" data-en>Romantic Curls</div><div class="t" data-es>Rizos Románticos</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/14-floral-bridal.jpg" alt="Floral bridal"><div class="cap"><div class="t" data-en>Floral Bride</div><div class="t" data-es>Novia Floral</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+  </div>
+</section>
+
+<!-- ========== QUOTE ========== -->
+<section class="quote reveal">
+  <blockquote>
+    <span data-en>"Makeup is never about hiding the face — it's about revealing the most confident version of it."</span>
+    <span data-es>"El maquillaje nunca se trata de esconder el rostro — se trata de revelar la versión más segura de él."</span>
+  </blockquote>
+  <div class="by">— Kimberly Hansen</div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="credentials" id="experience">
+  <div class="section-head reveal">
+    <span class="eyebrow" data-en>Experience & Credentials</span>
+    <span class="eyebrow" data-es>Experiencia & Credenciales</span>
+    <h2 class="display h-lg">
+      <span data-en>A career built on technique.</span>
+      <span data-es>Una carrera construida sobre la técnica.</span>
+    </h2>
+  </div>
+
+  <div class="cred-grid">
+    <div class="timeline reveal">
+      <div class="t-item">
+        <div class="year">2024 — <span data-en>Present</span><span data-es>Presente</span></div>
+        <div class="title" data-en>Founder · Hair & Beauty by Kim</div>
+        <div class="title" data-es>Fundadora · Hair & Beauty by Kim</div>
+        <div class="desc" data-en>Private studio in San Diego offering professional makeup and hairstyling. Service area expanded to the Bay Area.</div>
+        <div class="desc" data-es>Estudio privado en San Diego que ofrece maquillaje profesional y peinado. Cobertura ampliada a la Bay Area.</div>
+      </div>
+      <div class="t-item">
+        <div class="year">2000 — 2017</div>
+        <div class="title" data-en>Beautician & Sales Manager · Irma's Beauty Supply</div>
+        <div class="title" data-es>Esteticista & Gerente de Ventas · Irma's Beauty Supply</div>
+        <div class="desc" data-en>Managed family beauty business (est. 1982) in Rosarito. Beautician focused on hair and makeup; sales, training, inventory and product expertise.</div>
+        <div class="desc" data-es>Gerente del negocio familiar (fundado en 1982) en Rosarito. Esteticista enfocada en cabello y maquillaje; ventas, capacitación, inventario y conocimiento de producto.</div>
+      </div>
+      <div class="t-item">
+        <div class="year">2007 — 2011</div>
+        <div class="title" data-en>Law Studies · Cesun Universidad, Tijuana</div>
+        <div class="title" data-es>Estudios en Derecho · Cesun Universidad, Tijuana</div>
+        <div class="desc" data-en>Higher education in parallel with beauty career — strong written, verbal and analytical foundation.</div>
+        <div class="desc" data-es>Educación superior en paralelo con la carrera de belleza — sólida base escrita, verbal y analítica.</div>
+      </div>
+      <div class="t-item">
+        <div class="year"><span data-en>Ongoing</span><span data-es>Continuo</span></div>
+        <div class="title" data-en>Beauty Expos & Education</div>
+        <div class="title" data-es>Expos de Belleza & Educación</div>
+        <div class="desc" data-en>Active participation in industry expos and continued teaching of beauty courses across the US-Mexico region.</div>
+        <div class="desc" data-es>Participación activa en expos de la industria y enseñanza continua de cursos de belleza en la región México-EE.UU.</div>
+      </div>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Bilingual EN · ES</h4>
+        <h4 data-es>Bilingüe EN · ES</h4>
+        <p data-en>Fluent client communication on both sides of the border.</p>
+        <p data-es>Comunicación fluida con clientes en ambos lados de la frontera.</p>
+      </div>
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Product Expertise</h4>
+        <h4 data-es>Experta en Producto</h4>
+        <p data-en>20+ years working with professional beauty product lines, formulas and demos.</p>
+        <p data-es>Más de 20 años trabajando con líneas profesionales de belleza, fórmulas y demos.</p>
+      </div>
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Sales & Inventory</h4>
+        <h4 data-es>Ventas & Inventario</h4>
+        <p data-en>Former sales manager — strong track record in retail beauty and B2B accounts.</p>
+        <p data-es>Ex-gerente de ventas — experiencia comprobada en belleza retail y cuentas B2B.</p>
+      </div>
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Teaching & Demo</h4>
+        <h4 data-es>Enseñanza & Demo</h4>
+        <p data-en>Public-facing educator: workshops, expos, one-on-one mentorship.</p>
+        <p data-es>Educadora de cara al público: talleres, expos, mentoría personalizada.</p>
+      </div>
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Bridal Specialist</h4>
+        <h4 data-es>Especialista en Novias</h4>
+        <p data-en>Hundreds of brides served, with long-wear formulas perfected for outdoor and indoor venues.</p>
+        <p data-es>Cientos de novias atendidas, con fórmulas de larga duración perfeccionadas para interiores y exteriores.</p>
+      </div>
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h4 data-en>Editorial & HD</h4>
+        <h4 data-es>Editorial & HD</h4>
+        <p data-en>Camera-ready application calibrated for studio and natural lighting.</p>
+        <p data-es>Aplicación lista para cámara, calibrada para luz de estudio y natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow" data-en>Get In Touch</span>
+      <span class="eyebrow" data-es>Contacto</span>
+      <h2 class="display h-lg" style="margin-top:18px">
+        <span data-en>Let's create<br>something beautiful.</span>
+        <span data-es>Creemos algo<br>hermoso.</span>
+      </h2>
+      <p data-en>Available for bridal bookings, editorial work, brand collaborations and private classes throughout San Diego and the Bay Area. Inquiries are answered within 24 hours.</p>
+      <p data-es>Disponible para bodas, trabajo editorial, colaboraciones con marcas y clases privadas en San Diego y la Bay Area. Respondo en menos de 24 horas.</p>
+
+      <div class="contact-list">
+        <a href="tel:+16192542996" class="c-item">
+          <div class="ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="lbl" data-en>Phone</div><div class="lbl" data-es>Teléfono</div>
+            <div class="val">+1 (619) 254-2996</div>
+          </div>
+        </a>
+
+        <a href="mailto:info@hairandbeautybykim.com" class="c-item">
+          <div class="ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="lbl">Email</div>
+            <div class="val">info@hairandbeautybykim.com</div>
+          </div>
+        </a>
+
+        <div class="c-item">
+          <div class="ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="lbl" data-en>Service Area</div><div class="lbl" data-es>Cobertura</div>
+            <div class="val">San Diego · Bay Area · CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="follow">
+        <span class="follow-label" data-en>Follow the work</span>
+        <span class="follow-label" data-es>Sígueme</span>
+        <div class="follow-links">
+          <a href="https://www.instagram.com/kimharias1" target="_blank" rel="noopener" class="follow-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+            <span>@kimharias1</span>
+          </a>
+          <a href="https://www.facebook.com/kimharias" target="_blank" rel="noopener" class="follow-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <span>kimharias</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <form class="form reveal" id="contactForm" onsubmit="return submitForm(event)">
+      <h3>
+        <span data-en>Request a Booking</span>
+        <span data-es>Solicitar Reserva</span>
+      </h3>
+      <div class="form-row">
+        <label data-en>Full Name</label><label data-es>Nombre Completo</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label data-en>Service Interested In</label><label data-es>Servicio de Interés</label>
+        <select name="service">
+          <option data-en value="Bridal">Bridal & Events</option>
+          <option data-es value="Bridal">Novias & Eventos</option>
+          <option data-en value="Editorial">Editorial & Photoshoot</option>
+          <option data-es value="Editorial">Editorial & Sesiones</option>
+          <option data-en value="Soft Glam">Soft Glam / Special Occasion</option>
+          <option data-es value="Soft Glam">Soft Glam / Ocasión Especial</option>
+          <option data-en value="Course">Beauty Course / Workshop</option>
+          <option data-es value="Course">Curso / Taller de Belleza</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label data-en>Message</label><label data-es>Mensaje</label>
+        <textarea name="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn">
+        <span data-en>Send Inquiry</span><span data-es>Enviar Solicitud</span>
+        <span class="arrow">→</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="mark">Hair & Beauty <em>by Kim</em></div>
+      <p data-en>Professional makeup artistry and beauty education. Serving San Diego and the Bay Area with 25+ years of craft. Bilingual EN · ES.</p>
+      <p data-es>Maquillaje profesional y educación en belleza. Al servicio de San Diego y la Bay Area con más de 25 años de oficio. Bilingüe EN · ES.</p>
+    </div>
+    <div class="foot">
+      <h5 data-en>Explore</h5><h5 data-es>Explorar</h5>
+      <ul>
+        <li><a href="#about" data-en>About</a><a href="#about" data-es>Acerca</a></li>
+        <li><a href="#services" data-en>Services</a><a href="#services" data-es>Servicios</a></li>
+        <li><a href="#work" data-en>Portfolio</a><a href="#work" data-es>Portafolio</a></li>
+        <li><a href="#experience" data-en>Experience</a><a href="#experience" data-es>Experiencia</a></li>
+        <li><a href="#contact" data-en>Contact</a><a href="#contact" data-es>Contacto</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h5 data-en>Contact</h5><h5 data-es>Contacto</h5>
+      <ul>
+        <li><a href="tel:+16192542996">+1 (619) 254-2996</a></li>
+        <li><a href="mailto:info@hairandbeautybykim.com">info@hairandbeautybykim.com</a></li>
+        <li><span data-en>San Diego · Bay Area</span><span data-es>San Diego · Bay Area</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <div>© <span id="yr"></span> Hair & Beauty by Kim. <span data-en>All rights reserved.</span><span data-es>Todos los derechos reservados.</span></div>
+    <div class="socials">
+      <a href="https://www.instagram.com/kimharias1" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+      <a href="https://www.facebook.com/kimharias" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile menu
+  const mt = document.getElementById('mobileToggle');
+  const nl = document.getElementById('navLinks');
+  mt.addEventListener('click', () => {
+    mt.classList.toggle('open');
+    nl.classList.toggle('open');
+  });
+  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mt.classList.remove('open'); nl.classList.remove('open');
+  }));
+
+  // language
+  const langBtns = document.querySelectorAll('.lang-toggle button');
+  function setLang(l) {
+    document.documentElement.lang = l;
+    langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+    try { localStorage.setItem('hbk_lang', l); } catch(e){}
+  }
+  langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  // initial
+  let saved = 'en';
+  try { saved = localStorage.getItem('hbk_lang') || (navigator.language.startsWith('es') ? 'es' : 'en'); } catch(e){}
+  setLang(saved);
+
+  // gallery filter
+  const filterBtns = document.querySelectorAll('.filter button');
+  const tiles = document.querySelectorAll('.tile');
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    filterBtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    tiles.forEach(t => {
+      const show = f === 'all' || t.dataset.cat === f;
+      t.style.display = show ? '' : 'none';
+    });
+  }));
+
+  // lightbox
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  let lbIndex = 0;
+  const lbList = Array.from(tiles).map(t => t.querySelector('img').src);
+  function openLB(i) {
+    lbIndex = i; lbImg.src = lbList[i]; lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function step(d) {
+    const visible = Array.from(tiles).map((t,i)=>({t,i})).filter(o => o.t.style.display !== 'none');
+    const pos = visible.findIndex(o => o.i === lbIndex);
+    const next = visible[(pos + d + visible.length) % visible.length];
+    openLB(next.i);
+  }
+  tiles.forEach((t, i) => t.addEventListener('click', () => openLB(i)));
+  lbClose.addEventListener('click', closeLB);
+  lbPrev.addEventListener('click', () => step(-1));
+  lbNext.addEventListener('click', () => step(1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+
+  // reveal animations
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // form
+  function submitForm(e) {
+    e.preventDefault();
+    const f = e.target;
+    const subject = encodeURIComponent('New booking inquiry — ' + (f.service.value || 'Service'));
+    const body = encodeURIComponent(
+      'Name: ' + f.name.value + '\n' +
+      'Email: ' + f.email.value + '\n' +
+      'Service: ' + f.service.value + '\n\n' +
+      'Message:\n' + f.message.value
+    );
+    window.location.href = 'mailto:info@hairandbeautybykim.com?subject=' + subject + '&body=' + body;
+    return false;
+  }
+</script>
+</body>
+</html>
