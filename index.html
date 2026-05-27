@@ -782,22 +782,22 @@
 <!-- ========== GALLERY ========== -->
 <div class="marquee-band">
   <div class="marquee">
-    <span class="marquee-item">Bridal<span class="dot"></span></span>
+    <span class="marquee-item">Events<span class="dot"></span></span>
     <span class="marquee-item">Quinceañeras<span class="dot"></span></span>
     <span class="marquee-item">Editorial<span class="dot"></span></span>
     <span class="marquee-item">Galas<span class="dot"></span></span>
-    <span class="marquee-item">Eventos<span class="dot"></span></span>
     <span class="marquee-item">Soft Glam<span class="dot"></span></span>
     <span class="marquee-item">Demos<span class="dot"></span></span>
+    <span class="marquee-item">Product Showcasing<span class="dot"></span></span>
     <span class="marquee-item">San Diego<span class="dot"></span></span>
     <span class="marquee-item">Bilingual<span class="dot"></span></span>
-    <span class="marquee-item">Bridal<span class="dot"></span></span>
+    <span class="marquee-item">Events<span class="dot"></span></span>
     <span class="marquee-item">Quinceañeras<span class="dot"></span></span>
     <span class="marquee-item">Editorial<span class="dot"></span></span>
     <span class="marquee-item">Galas<span class="dot"></span></span>
-    <span class="marquee-item">Eventos<span class="dot"></span></span>
     <span class="marquee-item">Soft Glam<span class="dot"></span></span>
     <span class="marquee-item">Demos<span class="dot"></span></span>
+    <span class="marquee-item">Product Showcasing<span class="dot"></span></span>
     <span class="marquee-item">San Diego<span class="dot"></span></span>
     <span class="marquee-item">Bilingual<span class="dot"></span></span>
   </div>
@@ -826,14 +826,11 @@
   <div class="grid" id="grid">
     <div class="tile tall" data-cat="editorial"><img src="images/gallery/01-editorial-eye.jpg" alt="Editorial gold eye"><div class="cap"><div class="t" data-en>Golden Hour</div><div class="t" data-es>Hora Dorada</div><div class="c">Editorial</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/02-bridal-glow.jpg" alt="Bridal glow"><div class="cap"><div class="t" data-en>Bridal Glow</div><div class="t" data-es>Brillo de Novia</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
-    <div class="tile" data-cat="glam"><img src="images/gallery/03-soft-glam.jpg" alt="Soft glam"><div class="cap"><div class="t" data-en>Soft Glam</div><div class="t" data-es>Soft Glam</div><div class="c">Glam</div></div></div>
     <div class="tile" data-cat="glam"><img src="images/gallery/04-smoky-blonde.jpg" alt="Smoky eye"><div class="cap"><div class="t" data-en>Smoky Sun</div><div class="t" data-es>Ahumado Solar</div><div class="c">Glam</div></div></div>
     <div class="tile" data-cat="color"><img src="images/gallery/05-vibrant-color.jpg" alt="Vibrant color"><div class="cap"><div class="t" data-en>Bold Plum</div><div class="t" data-es>Ciruela Audaz</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
     <div class="tile" data-cat="editorial"><img src="images/gallery/06-peach-lip.jpg" alt="Peach lip"><div class="cap"><div class="t" data-en>Peach Cream</div><div class="t" data-es>Durazno</div><div class="c">Beauty</div></div></div>
-    <div class="tile" data-cat="color"><img src="images/gallery/08-teal-statement.jpg" alt="Teal color"><div class="cap"><div class="t" data-en>Teal Statement</div><div class="t" data-es>Turquesa</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/11-bridal-updo.jpg" alt="Bridal updo"><div class="cap"><div class="t" data-en>Bridal Updo</div><div class="t" data-es>Recogido Novia</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/12-updo-back.jpg" alt="Updo back"><div class="cap"><div class="t" data-en>Sculpted Hair</div><div class="t" data-es>Cabello Esculpido</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
-    <div class="tile" data-cat="bridal"><img src="images/gallery/13-romantic-curls.jpg" alt="Romantic curls"><div class="cap"><div class="t" data-en>Romantic Curls</div><div class="t" data-es>Rizos Románticos</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/14-floral-bridal.jpg" alt="Floral bridal"><div class="cap"><div class="t" data-en>Floral Bride</div><div class="t" data-es>Novia Floral</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
     <div class="tile" data-cat="color"><img src="images/gallery/15-bold-purple-color.jpg" alt="Bold purple color makeup"><div class="cap"><div class="t" data-en>Bold Purple</div><div class="t" data-es>Púrpura Audaz</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
     <div class="tile" data-cat="glam"><img src="images/gallery/16-silver-ombre-glam.jpg" alt="Silver ombre glam"><div class="cap"><div class="t" data-en>Silver Ombre</div><div class="t" data-es>Ombré Plata</div><div class="c">Glam</div></div></div>
@@ -1175,11 +1172,13 @@
     if (e.key === 'ArrowRight') step(1);
   });
 
-  // reveal animations
+  // reveal animations (with mobile-friendly threshold)
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
-  }, { threshold: .12 });
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Safety: force reveal anything still hidden after 5s
+  setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 5000);
 
 
   // Animated stat counters
@@ -1204,15 +1203,32 @@
   }, { threshold: .5 });
   countEls.forEach(el => countObs.observe(el));
 
-  // Staggered gallery reveal
+  // Staggered gallery reveal (robust on mobile)
   const galleryGrid = document.getElementById('grid');
   if (galleryGrid) {
+    let revealed = false;
+    function revealGrid() {
+      if (revealed) return;
+      revealed = true;
+      galleryGrid.classList.add('in');
+    }
     const gridObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) { galleryGrid.classList.add('in'); gridObs.unobserve(galleryGrid); }
+        if (e.isIntersecting) { revealGrid(); gridObs.disconnect(); }
       });
-    }, { threshold: .1 });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     gridObs.observe(galleryGrid);
+    // Safety fallback: also reveal on first scroll near the grid
+    function scrollCheck() {
+      const rect = galleryGrid.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.9) {
+        revealGrid();
+        window.removeEventListener('scroll', scrollCheck);
+      }
+    }
+    window.addEventListener('scroll', scrollCheck, { passive: true });
+    // Hard safety: reveal after 4 seconds no matter what
+    setTimeout(revealGrid, 4000);
   }
 
   // form
