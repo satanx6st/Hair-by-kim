@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Hair & Beauty by Kim · Makeup Artist · San Diego & Bay Area</title>
-<meta name="description" content="Professional makeup artist serving San Diego and the Bay Area. Events, editorial, glam, and product demos. Over 25 years of experience. Bilingual EN and ES." />
+<title>Hair & Beauty by Kim · Makeup Artist · San Diego</title>
+<meta name="description" content="Professional makeup artist serving San Diego. Events, editorial, glam, and product demos. Over 25 years of experience. Bilingual EN and ES." />
 <meta name="theme-color" content="#0b0b0b" />
 <meta name="author" content="Kimberly Hansen" />
 <link rel="canonical" href="https://hairandbeautybykim.com/" />
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hairandbeautybykim.com/" />
 <meta property="og:site_name" content="Hair & Beauty by Kim" />
-<meta property="og:title" content="Hair & Beauty by Kim · Makeup Artist · San Diego & Bay Area" />
-<meta property="og:description" content="Professional makeup artist with over 25 years of experience. Events, editorial, glam, and product demos across San Diego and the Bay Area. Bilingual EN and ES." />
+<meta property="og:title" content="Hair & Beauty by Kim · Makeup Artist · San Diego" />
+<meta property="og:description" content="Professional makeup artist with over 25 years of experience. Events, editorial, glam, and product demos in San Diego. Bilingual EN and ES." />
 <meta property="og:image" content="https://hairandbeautybykim.com/images/social/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -32,7 +32,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Hair & Beauty by Kim · Makeup Artist" />
-<meta name="twitter:description" content="Events, editorial, glam, and product demos. San Diego and the Bay Area. Bilingual." />
+<meta name="twitter:description" content="Events, editorial, glam, and product demos. San Diego. Bilingual." />
 <meta name="twitter:image" content="https://hairandbeautybykim.com/images/social/og.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -497,6 +497,117 @@
     .nav-links{width:88%}
   }
 
+
+  /* ============== CREAM QUOTE SECTION ============== */
+  .quote.cream{
+    background:linear-gradient(180deg, #f7f3ee 0%, #efe8df 100%);
+    color:var(--ink);
+    border-top:1px solid rgba(201,169,106,.3);
+    border-bottom:1px solid rgba(201,169,106,.3);
+    position:relative;
+  }
+  .quote.cream::before{
+    color:var(--gold-deep);
+    font-size:9rem;opacity:.55;
+  }
+  .quote.cream blockquote{
+    color:#1d1d1d;
+  }
+  .quote.cream .by{
+    color:var(--gold-deep);
+  }
+  .quote.cream .quote-ornament{
+    position:absolute;left:50%;bottom:36px;transform:translateX(-50%);
+    width:120px;height:1px;background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ============== SCROLL INDICATOR (hero) ============== */
+  .scroll-indicator{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;
+    color:var(--gold-bright);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;
+    opacity:.85;animation:fadeUp 1.6s ease-out .6s both;
+  }
+  .scroll-indicator .line{
+    width:1px;height:50px;background:linear-gradient(180deg, var(--gold-bright), transparent);
+    position:relative;overflow:hidden;
+  }
+  .scroll-indicator .line::after{
+    content:'';position:absolute;top:-50%;left:0;width:100%;height:50%;
+    background:var(--white);animation:scrollLine 2.2s cubic-bezier(.7,0,.3,1) infinite;
+  }
+  @keyframes scrollLine{
+    0%{top:-50%}
+    100%{top:100%}
+  }
+  @keyframes fadeUp{
+    from{opacity:0;transform:translate(-50%, 16px)}
+    to{opacity:.85;transform:translate(-50%, 0)}
+  }
+
+  /* ============== MARQUEE BAND ============== */
+  .marquee-band{
+    background:linear-gradient(90deg, #050505, #131313, #050505);
+    border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+    padding:24px 0;overflow:hidden;position:relative;
+  }
+  .marquee{
+    display:flex;width:fit-content;
+    animation:marqueeScroll 40s linear infinite;
+  }
+  .marquee:hover{animation-play-state:paused}
+  .marquee-item{
+    font-family:var(--serif);font-size:clamp(1.6rem, 3vw, 2.4rem);font-style:italic;
+    color:var(--paper);padding:0 30px;display:flex;align-items:center;white-space:nowrap;
+    opacity:.55;transition:opacity .3s;
+  }
+  .marquee-item:hover{opacity:1}
+  .marquee-item .dot{
+    display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);
+    margin:0 30px;flex-shrink:0;
+  }
+  @keyframes marqueeScroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+
+  /* ============== STAT COUNTER ============== */
+  .hero-meta .item .v{transition:opacity .3s}
+
+  /* ============== STAGGERED GALLERY REVEAL ============== */
+  .grid .tile{
+    opacity:0;transform:translateY(36px) scale(.96);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  .grid.in .tile{opacity:1;transform:translateY(0) scale(1)}
+  .grid.in .tile:nth-child(1){transition-delay:.05s}
+  .grid.in .tile:nth-child(2){transition-delay:.12s}
+  .grid.in .tile:nth-child(3){transition-delay:.19s}
+  .grid.in .tile:nth-child(4){transition-delay:.26s}
+  .grid.in .tile:nth-child(5){transition-delay:.33s}
+  .grid.in .tile:nth-child(6){transition-delay:.40s}
+  .grid.in .tile:nth-child(7){transition-delay:.47s}
+  .grid.in .tile:nth-child(8){transition-delay:.54s}
+
+  /* ============== SECTION GRADIENTS (break uniform black) ============== */
+  .about{background:linear-gradient(180deg, #0b0b0b 0%, #0e0e0e 60%, #0b0b0b 100%)}
+  .credentials{background:radial-gradient(ellipse at top, #131313 0%, #0b0b0b 60%)}
+
+  /* ============== LINK + BUTTON ANIMATIONS ============== */
+  .c-item:hover .ico{
+    background:rgba(201,169,106,.12);
+    transform:scale(1.06);
+  }
+  .c-item .ico{transition:all .35s var(--ease)}
+
+  /* ============== ENHANCED SERVICE CARD HOVER ============== */
+  .service{position:relative;overflow:hidden}
+  .service::after{
+    content:'';position:absolute;left:0;top:0;width:3px;height:0;
+    background:var(--gold);transition:height .5s var(--ease);
+  }
+  .service:hover::after{height:100%}
+
   /* ============== LANGUAGE SWITCH ============== */
   html[lang="en"] [data-es]{display:none !important}
   html[lang="es"] [data-en]{display:none !important}
@@ -528,8 +639,8 @@
 <!-- ========== HERO ========== -->
 <header class="hero" id="top">
   <div class="hero-inner">
-    <div class="eyebrow" data-en>San Diego · Bay Area · Since November 2000</div>
-    <div class="eyebrow" data-es>San Diego · Bay Area · Desde noviembre de 2000</div>
+    <div class="eyebrow" data-en>San Diego · Since November 2000</div>
+    <div class="eyebrow" data-es>San Diego · Desde noviembre de 2000</div>
 
     <h1 class="display h-xl">
       <span data-en>The art of <em>effortless</em> beauty.</span>
@@ -553,12 +664,12 @@
 
     <div class="hero-meta">
       <div class="item">
-        <span class="v">25+</span>
+        <span class="v" data-count="25" data-suffix="+">0+</span>
         <span class="l" data-en>Years Experience</span>
         <span class="l" data-es>Años de experiencia</span>
       </div>
       <div class="item">
-        <span class="v">100+</span>
+        <span class="v" data-count="100" data-suffix="+">0+</span>
         <span class="l" data-en>Clients Styled</span>
         <span class="l" data-es>Clientas atendidas</span>
       </div>
@@ -569,6 +680,10 @@
       </div>
     </div>
   </div>
+  <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <span data-en>Scroll</span><span data-es>Desliza</span>
+    <span class="line"></span>
+  </a>
 </header>
 
 <!-- ========== ABOUT ========== -->
@@ -600,8 +715,8 @@
       <p data-en>Over the years she has refined every modern technique: soft glam, bridal, editorial, color correction, and high-definition camera-ready finishes. She has <strong>participated in industry expos</strong> and led <strong>live product demonstrations</strong> on both sides of the border.</p>
       <p data-es>Con los años ha refinado cada técnica moderna: soft glam, novias, editorial, corrección de color y acabados HD listos para cámara. Ha <strong>participado en expos de la industria</strong> y realizado <strong>demostraciones de producto en vivo</strong> a ambos lados de la frontera.</p>
 
-      <p data-en>Today she runs <strong>Hair & Beauty by Kim</strong>, a private studio serving San Diego and the Bay Area. Bilingual, fully booked, and trusted by clients who want the polish without the fuss.</p>
-      <p data-es>Hoy dirige <strong>Hair & Beauty by Kim</strong>, un estudio privado en San Diego con cobertura a la Bay Area. Bilingüe, con agenda llena y la confianza de clientas que buscan elegancia sin complicaciones.</p>
+      <p data-en>Today she runs <strong>Hair & Beauty by Kim</strong>, a private studio in San Diego. Bilingual, fully booked, and trusted by clients who want the polish without the fuss.</p>
+      <p data-es>Hoy dirige <strong>Hair & Beauty by Kim</strong>, un estudio privado en San Diego. Bilingüe, con agenda llena y la confianza de clientas que buscan elegancia sin complicaciones.</p>
 
       <div class="signature">
         Kimberly Hansen
@@ -665,6 +780,29 @@
 </section>
 
 <!-- ========== GALLERY ========== -->
+<div class="marquee-band">
+  <div class="marquee">
+    <span class="marquee-item">Bridal<span class="dot"></span></span>
+    <span class="marquee-item">Quinceañeras<span class="dot"></span></span>
+    <span class="marquee-item">Editorial<span class="dot"></span></span>
+    <span class="marquee-item">Galas<span class="dot"></span></span>
+    <span class="marquee-item">Eventos<span class="dot"></span></span>
+    <span class="marquee-item">Soft Glam<span class="dot"></span></span>
+    <span class="marquee-item">Demos<span class="dot"></span></span>
+    <span class="marquee-item">San Diego<span class="dot"></span></span>
+    <span class="marquee-item">Bilingual<span class="dot"></span></span>
+    <span class="marquee-item">Bridal<span class="dot"></span></span>
+    <span class="marquee-item">Quinceañeras<span class="dot"></span></span>
+    <span class="marquee-item">Editorial<span class="dot"></span></span>
+    <span class="marquee-item">Galas<span class="dot"></span></span>
+    <span class="marquee-item">Eventos<span class="dot"></span></span>
+    <span class="marquee-item">Soft Glam<span class="dot"></span></span>
+    <span class="marquee-item">Demos<span class="dot"></span></span>
+    <span class="marquee-item">San Diego<span class="dot"></span></span>
+    <span class="marquee-item">Bilingual<span class="dot"></span></span>
+  </div>
+</div>
+
 <section class="gallery" id="work">
   <div class="section-head reveal">
     <span class="eyebrow" data-en>Selected Work</span>
@@ -692,24 +830,38 @@
     <div class="tile" data-cat="glam"><img src="images/gallery/04-smoky-blonde.jpg" alt="Smoky eye"><div class="cap"><div class="t" data-en>Smoky Sun</div><div class="t" data-es>Ahumado Solar</div><div class="c">Glam</div></div></div>
     <div class="tile" data-cat="color"><img src="images/gallery/05-vibrant-color.jpg" alt="Vibrant color"><div class="cap"><div class="t" data-en>Bold Plum</div><div class="t" data-es>Ciruela Audaz</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
     <div class="tile" data-cat="editorial"><img src="images/gallery/06-peach-lip.jpg" alt="Peach lip"><div class="cap"><div class="t" data-en>Peach Cream</div><div class="t" data-es>Durazno</div><div class="c">Beauty</div></div></div>
-    <div class="tile tall" data-cat="glam"><img src="images/gallery/07-warm-glam.jpg" alt="Warm glam"><div class="cap"><div class="t" data-en>Warm Glam</div><div class="t" data-es>Glam Cálido</div><div class="c">Glam</div></div></div>
     <div class="tile" data-cat="color"><img src="images/gallery/08-teal-statement.jpg" alt="Teal color"><div class="cap"><div class="t" data-en>Teal Statement</div><div class="t" data-es>Turquesa</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
-    <div class="tile" data-cat="glam"><img src="images/gallery/09-brunette-glam.jpg" alt="Brunette glam"><div class="cap"><div class="t" data-en>Studio Glam</div><div class="t" data-es>Glam de Estudio</div><div class="c">Glam</div></div></div>
-    <div class="tile" data-cat="glam"><img src="images/gallery/10-evening-look.jpg" alt="Evening look"><div class="cap"><div class="t" data-en>Evening</div><div class="t" data-es>Noche</div><div class="c">Glam</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/11-bridal-updo.jpg" alt="Bridal updo"><div class="cap"><div class="t" data-en>Bridal Updo</div><div class="t" data-es>Recogido Novia</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/12-updo-back.jpg" alt="Updo back"><div class="cap"><div class="t" data-en>Sculpted Hair</div><div class="t" data-es>Cabello Esculpido</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/13-romantic-curls.jpg" alt="Romantic curls"><div class="cap"><div class="t" data-en>Romantic Curls</div><div class="t" data-es>Rizos Románticos</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
     <div class="tile" data-cat="bridal"><img src="images/gallery/14-floral-bridal.jpg" alt="Floral bridal"><div class="cap"><div class="t" data-en>Floral Bride</div><div class="t" data-es>Novia Floral</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="color"><img src="images/gallery/15-bold-purple-color.jpg" alt="Bold purple color makeup"><div class="cap"><div class="t" data-en>Bold Purple</div><div class="t" data-es>Púrpura Audaz</div><div class="c" data-en>Color</div><div class="c" data-es>Color</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/16-silver-ombre-glam.jpg" alt="Silver ombre glam"><div class="cap"><div class="t" data-en>Silver Ombre</div><div class="t" data-es>Ombré Plata</div><div class="c">Glam</div></div></div>
+    <div class="tile tall" data-cat="bridal"><img src="images/gallery/17-bridal-half-up.jpg" alt="Bridal half-up"><div class="cap"><div class="t" data-en>Half-Up Bridal</div><div class="t" data-es>Semirecogido</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/18-auburn-waves.jpg" alt="Auburn waves"><div class="cap"><div class="t" data-en>Auburn Waves</div><div class="t" data-es>Ondas Cobrizas</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/19-glossy-waves.jpg" alt="Glossy waves"><div class="cap"><div class="t" data-en>Glossy Waves</div><div class="t" data-es>Ondas Brillantes</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/20-textured-updo.jpg" alt="Textured updo"><div class="cap"><div class="t" data-en>Textured Updo</div><div class="t" data-es>Recogido Texturizado</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/21-romantic-bun.jpg" alt="Romantic bun"><div class="cap"><div class="t" data-en>Romantic Bun</div><div class="t" data-es>Chongó Romántico</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile tall" data-cat="bridal"><img src="images/gallery/22-bridal-collage.jpg" alt="Bridal collage"><div class="cap"><div class="t" data-en>Bridal Full Look</div><div class="t" data-es>Look Completo</div><div class="c" data-en>Bridal</div><div class="c" data-es>Novias</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/23-half-up-curls.jpg" alt="Half-up curls"><div class="cap"><div class="t" data-en>Curled Half-Up</div><div class="t" data-es>Rizos Semirecogidos</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/24-mature-elegance.jpg" alt="Mature elegance"><div class="cap"><div class="t" data-en>Mature Elegance</div><div class="t" data-es>Elegancia Madura</div><div class="c">Glam</div></div></div>
+    <div class="tile tall" data-cat="bridal"><img src="images/gallery/25-quinceanera-collage.jpg" alt="Quinceañera look"><div class="cap"><div class="t" data-en>Quinceañera</div><div class="t" data-es>Quinceañera</div><div class="c" data-en>Events</div><div class="c" data-es>Eventos</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/26-soft-waves.jpg" alt="Soft waves"><div class="cap"><div class="t" data-en>Soft Waves</div><div class="t" data-es>Ondas Suaves</div><div class="c" data-en>Hair</div><div class="c" data-es>Cabello</div></div></div>
+    <div class="tile" data-cat="bridal"><img src="images/gallery/27-evening-updo.jpg" alt="Evening updo"><div class="cap"><div class="t" data-en>Evening Updo</div><div class="t" data-es>Recogido de Noche</div><div class="c" data-en>Events</div><div class="c" data-es>Eventos</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/28-natural-glam.jpg" alt="Natural glam"><div class="cap"><div class="t" data-en>Natural Glam</div><div class="t" data-es>Glam Natural</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/29-silk-scarf-style.jpg" alt="Silk scarf styling"><div class="cap"><div class="t" data-en>Silk &amp; Shine</div><div class="t" data-es>Seda y Brillo</div><div class="c">Glam</div></div></div>
+    <div class="tile" data-cat="glam"><img src="images/gallery/30-mirror-glow.jpg" alt="Mirror glow"><div class="cap"><div class="t" data-en>Mirror Glow</div><div class="t" data-es>Resplandor</div><div class="c">Glam</div></div></div>
   </div>
 </section>
 
 <!-- ========== QUOTE ========== -->
-<section class="quote reveal">
+<section class="quote cream reveal">
   <blockquote>
     <span data-en>"Makeup is never about hiding the face. It is about revealing the most confident version of it."</span>
     <span data-es>"El maquillaje no se trata de esconder el rostro. Se trata de revelar su versión más segura."</span>
   </blockquote>
   <div class="by">Kimberly Hansen</div>
+  <div class="quote-ornament"></div>
 </section>
 
 <!-- ========== EXPERIENCE ========== -->
@@ -729,8 +881,8 @@
         <div class="year">2024 · <span data-en>Present</span><span data-es>Presente</span></div>
         <div class="title" data-en>Founder · Hair & Beauty by Kim</div>
         <div class="title" data-es>Fundadora · Hair & Beauty by Kim</div>
-        <div class="desc" data-en>Private studio in San Diego offering professional makeup and hairstyling. Service area expanded to the Bay Area.</div>
-        <div class="desc" data-es>Estudio privado en San Diego que ofrece maquillaje profesional y peinado. Cobertura ampliada a la Bay Area.</div>
+        <div class="desc" data-en>Private studio in San Diego offering professional makeup and hairstyling.</div>
+        <div class="desc" data-es>Estudio privado en San Diego que ofrece maquillaje profesional y peinado.</div>
       </div>
       <div class="t-item">
         <div class="year">2000 · 2017</div>
@@ -812,8 +964,8 @@
         <span data-en>Let's create<br>something beautiful.</span>
         <span data-es>Creemos algo<br>hermoso.</span>
       </h2>
-      <p data-en>Available for events, editorial work, brand collaborations, and product demos throughout San Diego and the Bay Area. Inquiries are answered within 24 hours.</p>
-      <p data-es>Disponible para eventos, trabajo editorial, colaboraciones con marcas y demostraciones de producto en San Diego y la Bay Area. Respondo en menos de 24 horas.</p>
+      <p data-en>Available for events, editorial work, brand collaborations, and product demos throughout San Diego. Inquiries are answered within 24 hours.</p>
+      <p data-es>Disponible para eventos, trabajo editorial, colaboraciones con marcas y demostraciones de producto en San Diego. Respondo en menos de 24 horas.</p>
 
       <div class="contact-list">
         <a href="tel:+16192542996" class="c-item">
@@ -842,7 +994,7 @@
           </div>
           <div>
             <div class="lbl" data-en>Service Area</div><div class="lbl" data-es>Cobertura</div>
-            <div class="val">San Diego · Bay Area · CA</div>
+            <div class="val">San Diego · CA</div>
           </div>
         </div>
       </div>
@@ -902,8 +1054,8 @@
   <div class="foot-grid">
     <div class="foot-brand">
       <div class="mark">Hair & Beauty <em>by Kim</em></div>
-      <p data-en>Professional makeup artistry and live product demos. Serving San Diego and the Bay Area with over 25 years of craft. Bilingual EN · ES.</p>
-      <p data-es>Maquillaje profesional y demostraciones de producto en vivo. Al servicio de San Diego y la Bay Area con más de 25 años de oficio. Bilingüe EN · ES.</p>
+      <p data-en>Professional makeup artistry and live product demos. Serving San Diego with over 25 years of craft. Bilingual EN · ES.</p>
+      <p data-es>Maquillaje profesional y demostraciones de producto en vivo. Al servicio de San Diego con más de 25 años de oficio. Bilingüe EN · ES.</p>
     </div>
     <div class="foot">
       <h5 data-en>Explore</h5><h5 data-es>Explorar</h5>
@@ -920,7 +1072,7 @@
       <ul>
         <li><a href="tel:+16192542996">+1 (619) 254-2996</a></li>
         <li><a href="mailto:kimharias@gmail.com">kimharias@gmail.com</a></li>
-        <li><span data-en>San Diego · Bay Area</span><span data-es>San Diego · Bay Area</span></li>
+        <li><span data-en>San Diego, CA</span><span data-es>San Diego, CA</span></li>
       </ul>
     </div>
   </div>
@@ -948,7 +1100,7 @@
   // nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+    nav.classList.toggle('scrolled', window.scrollY < 40);
   });
 
   // mobile menu
@@ -1028,6 +1180,40 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+
+  // Animated stat counters
+  const countEls = document.querySelectorAll('.hero-meta .v[data-count]');
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1600;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const countObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCount(e.target); countObs.unobserve(e.target); }
+    });
+  }, { threshold: .5 });
+  countEls.forEach(el => countObs.observe(el));
+
+  // Staggered gallery reveal
+  const galleryGrid = document.getElementById('grid');
+  if (galleryGrid) {
+    const gridObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { galleryGrid.classList.add('in'); gridObs.unobserve(galleryGrid); }
+      });
+    }, { threshold: .1 });
+    gridObs.observe(galleryGrid);
+  }
 
   // form
   function submitForm(e) {
